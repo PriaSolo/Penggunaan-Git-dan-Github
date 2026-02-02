@@ -1,3 +1,2 @@
 ﻿# Tugas Praktikum Git dan GitHub
-1
-12
+readme via github web
