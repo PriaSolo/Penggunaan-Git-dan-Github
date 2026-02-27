@@ -8,3 +8,4 @@ number = 15
 if number > 0:
   print("The number is positive")
 #kalau true kondisi if bakal di eksekusi tapi kalau false maka akan di skip sampai ketemu kondisi yang true
+
