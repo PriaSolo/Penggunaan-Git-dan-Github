@@ -2,31 +2,12 @@ class umurError(Exception):
     def __init__(self, umur):
         self.umur = umur 
         super().__init__(f'umur {umur} tidak valid,harus diantara 17-60.')
-def validasi_umur(umur):
-    if umur < 17 or umur > 60:
-        raise umurError(umur)
-    return True
+
 class NamaError(Exception):
     def __init__(self, nama):
         self.nama = nama
         super().__init__(f"Nama '{nama}' tidak valid, minimal harus 3 karakter.")
 
-def validasi_nama(nama):
-    if len(nama) < 3:
-        raise NamaError(nama)
-    return True
-
-class NamaError(Exception):
-    def __init__(self, nama):
-        self.nama = nama
-        super().__init__(f"Nama terlalu pendek! Minimal 3 karakter.")
-
-class umurError(Exception):
-    def __init__(self, umur):
-        self.umur = umur 
-        super().__init__(f"Umur tidak memenuhi syarat (17-60 tahun).")
-
-#vldasi
 def validasi_nama(nama):
     if len(nama) < 3:
         raise NamaError(nama)
@@ -82,6 +63,7 @@ def main():
             if not (hp_input.isdigit() and 10 <= len(hp_input) <= 13):
                 raise Exception("No HP tidak valid! Harus 10-13 digit angka.")
             hp_valid = hp_input
+
             break
         except Exception as e:
             print(f"[ERROR] {e}")
