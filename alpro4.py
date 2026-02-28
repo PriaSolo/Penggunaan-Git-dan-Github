@@ -16,7 +16,6 @@ def validasi_nama(nama):
         raise NamaError(nama)
     return True
 
-# 1. Definisi Custom Exception (Sesuai versi kamu)
 class NamaError(Exception):
     def __init__(self, nama):
         self.nama = nama
@@ -27,14 +26,13 @@ class umurError(Exception):
         self.umur = umur 
         super().__init__(f"Umur tidak memenuhi syarat (17-60 tahun).")
 
-# 2. Fungsi Validasi (Sesuai versi kamu)
+#vldasi
 def validasi_nama(nama):
     if len(nama) < 3:
         raise NamaError(nama)
     return True
 
 def validasi_umur(umur_str):
-    # Cek apakah input adalah angka
     if not umur_str.isdigit():
         raise ValueError("Umur harus berupa angka.")
     
@@ -72,7 +70,7 @@ def main():
         try:
             email_input = input("Email: ")
             if "@" not in email_input:
-                raise Exception("Email tidak valid! Harus mengandung '@'.")
+                raise Exception("Email tidak valid, Harus mengandung '@'.")
             email_valid = email_input
             break
         except Exception as e:
@@ -88,16 +86,14 @@ def main():
         except Exception as e:
             print(f"[ERROR] {e}")
         finally:
-            # Sesuai spesifikasi poin 6: selalu muncul setelah pengecekan No HP
             print("Proses input selesai.")
 
-    # 4. Menampilkan Output Data
     print("\n=== DATA PESERTA ===")
     print(f"Nama    : {nama_valid}")
     print(f"Umur    : {umur_valid} tahun")
     print(f"Email   : {email_valid}")
     print(f"No HP   : {hp_valid}")
     print("Status  : TERDAFTAR")
-
+    
 if __name__ == "__main__":
     main()
